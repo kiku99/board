@@ -21,14 +21,14 @@ public class PostMapperTest {
     @Test
     void save() {
         PostRequest params = new PostRequest();
-        params.setTitle("1¹ø °Ô½Ã±Û Á¦¸ñ");
-        params.setContent("1¹ø °Ô½Ã±Û ³»¿ë");
-        params.setWriter("Å×½ºÅÍ");
+        params.setTitle("1ë²ˆ ê²Œì‹œê¸€ ì œëª©");
+        params.setContent("1ë²ˆ ê²Œì‹œê¸€ ë‚´ìš©");
+        params.setWriter("í…ŒìŠ¤í„°");
         params.setNoticeYn(false);
         postMapper.save(params);
 
         List<PostResponse> posts = postMapper.findAll();
-        System.out.println("ÀüÃ¼ °Ô½Ã±Û °³¼ö´Â : " + posts.size() + "°³ÀÔ´Ï´Ù.");
+        System.out.println("ì „ì²´ ê²Œì‹œê¸€ ê°œìˆ˜ëŠ” : " + posts.size() + "ê°œìž…ë‹ˆë‹¤.");
     }
 
 }
