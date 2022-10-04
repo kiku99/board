@@ -18,7 +18,7 @@
 
 
     <!-- 게시글 저장 -->
-    <insert id="save" parameterType="com.example.board.domain.post.PostRequest">
+    <insert id="save" parameterType="com.example.board.domain.post.PostRequest" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO tb_post (
         <include refid="postColumns" />
         ) VALUES (
@@ -51,10 +51,10 @@
         UPDATE tb_post
         SET
             modified_date = NOW()
-          , title = #{title}
-          , content = #{content}
-          , writer = #{writer}
-          , notice_yn = #{noticeYn}
+        , title = #{title}
+        , content = #{content}
+        , writer = #{writer}
+        , notice_yn = #{noticeYn}
         WHERE
             id = #{id}
     </update>
