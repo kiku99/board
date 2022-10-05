@@ -32,10 +32,19 @@ public class PostController {
         return "redirect:/post/list.do";
     }
 
+    //게시글 목록 확인
     @GetMapping("/post/list.do")
     public String openPostList(Model model){
         List<PostResponse> posts = postService.findAllPost();
         model.addAttribute("posts", posts);
         return "post/list";
+    }
+
+    //게시글 상세 페이지
+    @GetMapping("/post/view.do")
+    public String openPostView(@RequestParam final Long id, Model model){
+        PostResponse post = postService.findPostById(id);
+        model.addAttribute("post", post);
+        return "post/view";
     }
 }
