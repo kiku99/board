@@ -53,6 +53,25 @@
     <script th:inline="javascript">
         /*<![CDATA[*/
 
+        window.onload = () => {
+            renderPostInfo();
+        }
+
+        // 게시글 상세정보 렌더링
+        function renderPostInfo(){
+            const post = [[ ${post} ]];
+            if ( !post ){
+                return false;
+            }
+
+            const form = document.getElementById('saveForm');
+            const fields = ['id', 'title', 'content', 'writer', 'noticeYN'];
+            form.isNotice.checked = post.noticeYn;
+
+            fields.forEach(field => {
+                form[field].value = post[field];
+            })
+        }
         // 게시글 저장(수정)
         function savePost() {
             const form = document.getElementById('saveForm');

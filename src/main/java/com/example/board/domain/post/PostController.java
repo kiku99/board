@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
+
 @Controller
 @RequiredArgsConstructor
 public class PostController {
@@ -24,6 +25,9 @@ public class PostController {
         }
         return "/post/write";
     }
+
+
+
 
     //신규 게시글 생성
     @PostMapping("/post/save.do")
