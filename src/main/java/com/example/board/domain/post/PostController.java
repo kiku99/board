@@ -26,9 +26,6 @@ public class PostController {
         return "/post/write";
     }
 
-
-
-
     //신규 게시글 생성
     @PostMapping("/post/save.do")
     public String savePost(final PostRequest params){
@@ -56,6 +53,13 @@ public class PostController {
     @PostMapping("/post/update.do")
     public String updatePost(final PostRequest params){
         postService.updatePost(params);
+        return "redirect:/post/list.do";
+    }
+
+    //게시글 삭제
+    @PostMapping("/post/delete.do")
+    public String deletePost(@RequestParam final Long id){
+        postService.deletePost(id);
         return "redirect:/post/list.do";
     }
 }
