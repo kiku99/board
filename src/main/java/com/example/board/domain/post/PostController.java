@@ -1,7 +1,7 @@
 package com.example.board.domain.post;
 
 import com.example.board.common.dto.MessageDto;
-import com.example.board.common.dto.SearchDTO;
+import com.example.board.common.dto.SearchDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,7 +36,7 @@ public class PostController {
 
     //게시글 목록 확인
     @GetMapping("/post/list.do")
-    public String openPostList(@ModelAttribute("params") final SearchDTO params, Model model){
+    public String openPostList(@ModelAttribute("params") final SearchDto params, Model model){
         List<PostResponse> posts = postService.findAllPost(params);
         model.addAttribute("posts", posts);
         return "post/list";

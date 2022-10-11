@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class SearchDTO {
+public class SearchDto {
 
     private int page;
     private int recordSize;
@@ -13,7 +13,7 @@ public class SearchDTO {
     private String keyword;
     private String searchType;
 
-    public SearchDTO(){
+    public SearchDto(){
         this.page = 1;
         this.recordSize = 10;
         this.pageSize = 10;
