@@ -80,7 +80,7 @@
             delete_yn = 0
         ORDER BY
             id DESC
-        LIMIT #{offset}, #{recordSize}
+        LIMIT #{pagination.limitStart}, #{recordSize}
     </select>
 
     <!-- 게시글 수 카운팅 -->
