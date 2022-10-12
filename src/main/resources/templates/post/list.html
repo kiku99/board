@@ -154,11 +154,16 @@
 
         // 페이지 이동
         function movePage(page) {
+
+            const form = document.getElementById('searchForm');
             const queryParams = {
                 page: (page) ? page : 1,
                 recordSize: 10,
-                pageSize: 10
+                pageSize: 10,
+                keyword: form.keyword.value,
+                searchType: form.searchType.value
             }
+
             location.href = location.pathname + '?' + new URLSearchParams(queryParams).toString();
         }
 
