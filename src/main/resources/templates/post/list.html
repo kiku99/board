@@ -73,6 +73,7 @@
         /*<![CDATA[*/
 
         window.onload = () => {
+            setQueryStringParams();
             findAllPost();
         }
 
@@ -165,6 +166,24 @@
             }
 
             location.href = location.pathname + '?' + new URLSearchParams(queryParams).toString();
+        }
+
+        // 쿼리 스트링 파라미터 셋팅
+        function setQueryStringParams() {
+
+            if ( !location.search ) {
+                return false;
+            }
+
+            const form = document.getElementById('searchForm');
+
+            new URLSearchParams(location.search).forEach((value, key) => {
+                if (form[key]) {
+                    form[key].value = value;
+                }
+            })
+
+            document.getElementById('mainKeyword').value = form.keyword.value;
         }
 
         /*]]>*/
