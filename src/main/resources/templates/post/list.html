@@ -105,7 +105,7 @@
                 html += `
                         <tr>
                             <td>${obj.noticeYn === true ? '공지' : num--}</td>
-                            <td class="text-left"><a href="/post/view.do?id=${obj.id}">${obj.title}</a></td>
+                            <td class="text-left"><a href="javascript: void(0);" onclick="goViewPage(${obj.id});">${obj.title}</a></td>
                             <td>${obj.writer}</td>
                             <td>${obj.createdDate}</td>
                             <td>${obj.viewCnt}</td>
@@ -184,6 +184,12 @@
             })
 
             document.getElementById('mainKeyword').value = form.keyword.value;
+        }
+
+        // 게시글 상세 페이지로 이동
+        function goViewPage(id) {
+            const queryString = (location.search) ? location.search + `&id=${id}` : `?id=${id}`;
+            location.href = '/post/view.do' + queryString;
         }
 
         /*]]>*/
