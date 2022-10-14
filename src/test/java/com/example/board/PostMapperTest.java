@@ -18,18 +18,6 @@ public class PostMapperTest {
     @Autowired
     PostMapper postMapper;
 
-    @Test
-    void save() {
-        PostRequest params = new PostRequest();
-        params.setTitle("1번 게시글 제목");
-        params.setContent("1번 게시글 내용");
-        params.setWriter("테스터");
-        params.setNoticeYn(false);
-        postMapper.save(params);
-
-        List<PostResponse> posts = postMapper.findAll();
-        System.out.println("전체 게시글 개수는 : " + posts.size() + "개입니다.");
-    }
 
     @Test
     void findById(){
@@ -65,11 +53,6 @@ public class PostMapperTest {
         }
     }
 
-    @Test
-    void delete(){
-        System.out.println("삭제 이전의 전체 게시글 개수는 : " + postMapper.findAll().size() + "개입니다.");
-        postMapper.deleteById(1L);
-        System.out.println("삭제 이후의 전체 게시글 개수는 : " + postMapper.findAll().size() + "개입니다.");
-    }
+
 
 }
