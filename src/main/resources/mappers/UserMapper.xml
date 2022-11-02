@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.board.domain.User.UserMapper">
+
+    <!-- tb_user 테이블 전체 컬럼 -->
+    <sql id="userColumns">
+        id
+        , password
+        , name
+    </sql>
+
+    <insert id="save" parameterType="com.example.board.domain.User.User" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO tb_user (
+        <include refid="userColumns" />
+        ) VALUES (
+        #{id}
+        , #{password}
+        , #{name}
+        )
+    </insert>
+
+    <select id="findById" parameterType="String" resultType="com.example.board.domain.User.User">
+        SELECT
+        <include refid="userColumns" />
+        FROM
+        tb_user
+        WHERE
+        id = #{value}
+    </select>
+
+</mapper>
