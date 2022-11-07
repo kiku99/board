@@ -1,4 +1,4 @@
-package com.example.board.domain.User;
+package com.example.board.domain.user;
 
 import org.apache.ibatis.annotations.Mapper;
 

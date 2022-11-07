@@ -1,4 +1,4 @@
-package com.example.board.domain.User;
+package com.example.board.domain.user;
 
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;

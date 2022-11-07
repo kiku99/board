@@ -1,6 +1,5 @@
-package com.example.board.domain.User;
+package com.example.board.domain.user;
 
-import com.example.board.common.dto.UserDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -12,8 +11,8 @@ public class UserService {
     private final UserMapper userMapper;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    public void insert(UserDto userDto){
-        userDto.setPassword(bCryptPasswordEncoder.encode(userDto.getPassword()));
-        userMapper.save(userDto.toEntity());
+    public void insert(User user){
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        userMapper.save(user);
     }
 }

@@ -1,6 +1,5 @@
-package com.example.board.domain.User;
+package com.example.board.domain.user;
 
-import com.example.board.common.dto.UserDto;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
