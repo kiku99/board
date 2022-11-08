@@ -22,13 +22,13 @@ public class LoginController {
 
     @GetMapping("/signUp")
     public String signUp(Model model){
-        model.addAttribute("userDto", new UserDto());
+        model.addAttribute("userDto", new User());
         return "signUp";
     }
 
     @PostMapping("/signUp")
-    public String signUp(@ModelAttribute("userDto") UserDto userDto){
-        userService.insert(userDto);
+    public String signUp(@ModelAttribute("userDto") User user){
+        userService.insert(user);
         return "redirect:/login";
     }
 }
