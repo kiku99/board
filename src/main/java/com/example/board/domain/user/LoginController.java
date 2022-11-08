@@ -17,13 +17,13 @@ public class LoginController {
 
     @GetMapping("/login")
     public String login(HttpServletRequest request){
-        return "login";
+        return "user/login";
     }
 
     @GetMapping("/signUp")
     public String signUp(Model model){
         model.addAttribute("userDto", new User());
-        return "signUp";
+        return "user/signUp";
     }
 
     @PostMapping("/signUp")
