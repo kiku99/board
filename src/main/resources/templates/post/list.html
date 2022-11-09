@@ -58,6 +58,12 @@
             <a th:href="@{/post/write.do}" class="btn btn-primary waves-effect waves-light">등록</a>
         </div>
 
+        <div class="btn_wrap text-left">
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="로그아웃" class="btn btn-primary waves-effect waves-light">
+            </form>
+        </div>
+
         <th:block layout:fragment="paging">
             <nav aria-label="Page navigation" class="text-center">
                 <ul class="pagination">
