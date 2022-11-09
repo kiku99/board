@@ -13,3 +13,4 @@ public class PostRequest {
     private String writer;       //
     private Boolean noticeYn;    //
 }
+

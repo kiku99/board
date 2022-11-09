@@ -16,6 +16,7 @@ public class SearchDto {
     private Pagination pagination;
 
     public SearchDto(){
+
         this.page = 1;
         this.recordSize = 10;
         this.pageSize = 10;

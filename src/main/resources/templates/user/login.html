@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Spring Security Example</title>
+</head>
+<body>
+<h1>Spring Security Login page</h1>
+<div th:if="${param.error}">Invalid username and password.</div>
+<div th:if="${param.logout}">You have been logged out.</div>
+<form th:action="@{/login}" method="post">
+    <div class="form-outline mb-4">
+        <input type="text" id="username" name="username" class="form-control"/>
+        <label class="form-label" for="username">ID</label>
+    </div>
+    <br>
+    <div class="form-outline mb-4">
+        <input type="password" id="userpassword" name="password" class="form-control"/>
+        <label class="form-label" for="userpassword">Password</label>
+    </div>
+    <br>
+    <div>
+        <input type="submit" class="btn btn-primary waves-effect waves-light" onclick="location.href='../post/list.do'; " value="Sign In" />
+        <input type="button" onclick="location.href='/signUp';" value="Sign Up" />
+    </div>
+</form>
+</body>
+</html>
