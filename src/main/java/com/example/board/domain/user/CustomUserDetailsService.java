@@ -27,7 +27,9 @@ public class CustomUserDetailsService implements UserDetailsService {
         User user = userMapper.findById(id);
 
         if (user != null){
-            grantedAuthorities.add(new SimpleGrantedAuthority("USER"));
+            for (Role role : user.getRoles()) {
+                grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
+            }
             return new org.springframework.security.core.userdetails.User(user.getId(), user.getPassword(), grantedAuthorities) {
             };
         }
