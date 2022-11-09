@@ -7,8 +7,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 import java.util.Map;
 
 
@@ -61,6 +59,7 @@ public class PostController {
     }
 
     // 게시글 삭제
+
     @PostMapping("/post/delete.do")
     public String deletePost(@RequestParam final Long id, @RequestParam final Map<String, Object> queryParams, Model model) {
         postService.deletePost(id);
