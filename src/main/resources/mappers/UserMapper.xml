@@ -8,6 +8,7 @@
         id
         , password
         , name
+        , role
     </sql>
 
     <insert id="save" parameterType="com.example.board.domain.user.User" useGeneratedKeys="true" keyProperty="id">
@@ -17,6 +18,7 @@
         #{id}
         , #{password}
         , #{name}
+        , 2
         )
     </insert>
 

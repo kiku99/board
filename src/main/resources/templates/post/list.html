@@ -64,6 +64,8 @@
             </form>
         </div>
 
+        <h3 sec:authorize="hasRole('USER')">Has USER Role</h3>
+
         <th:block layout:fragment="paging">
             <nav aria-label="Page navigation" class="text-center">
                 <ul class="pagination">

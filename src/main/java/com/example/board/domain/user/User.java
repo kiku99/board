@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Set;
 
 @NoArgsConstructor
 @Getter
@@ -14,4 +15,5 @@ public class User {
     private String id;
     private String password;
     private String name;
+    private int role;
 }

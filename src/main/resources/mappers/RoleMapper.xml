@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.board.domain.user.RoleMapper">
+
+    <!-- tb_user 테이블 전체 컬럼 -->
+    <sql id="roleColumns">
+        id
+        , name
+    </sql>
+
+    <select id="findById" parameterType="String" resultType="com.example.board.domain.user.Role">
+        SELECT
+        <include refid="roleColumns" />
+        FROM
+        tb_role
+        WHERE
+        id = #{value}
+    </select>
+
+</mapper>
