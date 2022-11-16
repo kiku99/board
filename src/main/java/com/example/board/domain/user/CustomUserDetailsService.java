@@ -17,6 +17,7 @@ import java.util.Set;
 public class CustomUserDetailsService implements UserDetailsService {
 
     private final UserMapper userMapper;
+    private final RoleMapper roleMapper;
 
     @Override
     @Transactional(readOnly = true)
@@ -25,11 +26,10 @@ public class CustomUserDetailsService implements UserDetailsService {
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
 
         User user = userMapper.findById(id);
+        Role role = roleMapper.findById(String.valueOf(user.getRole()));
 
         if (user != null){
-            for (Role role : user.getRoles()) {
-                grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
-            }
+            grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
             return new org.springframework.security.core.userdetails.User(user.getId(), user.getPassword(), grantedAuthorities) {
             };
         }
