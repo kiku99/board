@@ -15,7 +15,6 @@ import java.util.Map;
 public class PostController {
 
     private final PostService postService;
-
     //게시글 작성 페이지
     @GetMapping("/post/write.do")
     public String openPostWrite(@RequestParam(value = "id", required = false) final Long id, Model model){

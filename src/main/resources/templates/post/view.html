@@ -44,7 +44,7 @@
         <div class="btn_wrap text-center">
             <a href="javascript: void(0);" onclick="goListPage();" class="btn btn-default waves-effect waves-light">뒤로가기</a>
             <a href="javascript: void(0);" onclick="goWritePage();" class="btn btn-primary waves-effect waves-light">수정하기</a>
-            <button type="button" class="btn btn-danger waves-effect waves-light" onclick="deletePost();">삭제하기</button>
+            <button sec:authorize="hasRole('SYSTEM')" type="button" class="btn btn-danger waves-effect waves-light" onclick="deletePost();">삭제하기</button>
         </div>
     </div>
 </th:block>
