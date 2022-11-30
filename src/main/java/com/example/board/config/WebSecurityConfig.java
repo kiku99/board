@@ -38,8 +38,8 @@ public class WebSecurityConfig {
                 .and()
                 .logout()
                 .permitAll()
-                // .logoutUrl("/logout") // 로그아웃 URL (기본 값 : /logout)
-                // .logoutSuccessUrl("/login?logout") // 로그아웃 성공 URL (기본 값 : "/login?logout")
+                .logoutUrl("/logout") // 로그아웃 URL (기본 값 : /logout)
+                .logoutSuccessUrl("/login?logout") // 로그아웃 성공 URL (기본 값 : "/login?logout")
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout")) // 주소창에 요청해도 포스트로 인식하여 로그아웃
                 .deleteCookies("JSESSIONID") // 로그아웃 시 JSESSIONID 제거
                 .invalidateHttpSession(true) // 로그아웃 시 세션 종료

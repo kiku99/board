@@ -16,6 +16,11 @@ public class PostController {
 
     private final PostService postService;
 
+    //home
+    @GetMapping("/")
+    public String home(){
+        return "user/login";
+    }
     //게시글 작성 페이지
     @GetMapping("/post/write.do")
     public String openPostWrite(@RequestParam(value = "id", required = false) final Long id, Model model){

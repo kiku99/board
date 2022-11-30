@@ -15,10 +15,6 @@ public class LoginController {
 
     private final UserService userService;
 
-    @GetMapping("/")
-    public String home(){
-        return "user/login";
-    }
     @GetMapping("/login")
     public String login(HttpServletRequest request){
         return "user/login";
