@@ -4,9 +4,13 @@ import com.example.board.common.dto.MessageDto;
 import com.example.board.common.dto.SearchDto;
 import com.example.board.paging.PagingResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.security.Principal;
 import java.util.Map;
 
 

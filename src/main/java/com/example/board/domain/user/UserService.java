@@ -17,6 +17,7 @@ public class UserService {
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
     private final RoleMapper roleMapper;
 
+    // 유저 생성
     @Transactional
     public void insert(User user){
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
