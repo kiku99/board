@@ -1,46 +1,121 @@
-<!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<!DOCTYPE HTML>
+<!--[if lt IE 7 ]><html dir="ltr" lang="[::siteLang::]" class="no-js ie ie6 lte7 lte8 lte9"><![endif]-->
+<!--[if IE 7 ]><html dir="ltr" lang="[::siteLang::]" class="no-js ie ie7 lte7 lte8 lte9"><![endif]-->
+<!--[if IE 8 ]><html dir="ltr" lang="[::siteLang::]" class="no-js ie ie8 lte8 lte9"><![endif]-->
+<!--[if IE 9 ]><html dir="ltr" lang="[::siteLang::]" class="no-js ie ie9 lte9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html dir="ltr" lang="[::siteLang::]" class="no-js"><!--<![endif]-->
+
+<html dir="ltr" lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <title>[::documentTitle::]</title>
+    [::headCommon::]
+    <!-- made -->
+    <script src="/sites/[::siteId::]/style/js/site.js"></script>
+    <script src="/sites/[::siteId::]/style/js/jquery-ui.min.js"></script>
+</head>
 <body th:fragment="main-body">
-<div class="fixed-navbar">
-    <div class="pull-left">
-        <h1 class="page-title">게시판</h1>
+
+
+</div>
+<!--탑유틸메뉴-->
+<div id="topSec">
+    <div class="topSecInner">
+        <div class="util_nav">
+            <ul>
+                <li><a href="http://www.jbnu.ac.kr" target="_blank" title="새창" class="goto_univ"><img src="/image/icon.png" alt="icon">전북대학교</a></li>
+                <li><a href="http://portal.jbnu.ac.kr/" target="_blank" title="새창">대학포털</a></li>
+                <li><a href="https://oasis.jbnu.ac.kr/oasis.html" target="_blank" title="새창">오아시스</a></li>
+            </ul>
+        </div>
     </div>
 </div>
+<!--탑유틸메뉴-->
 
-<div id="wrapper">
-    <div class="main-content">
-        <div class="row row-inline-block small-spacing">
-            <div class="col-xs-12">
-                <div class="box-content">
-                    <div class="clearfix">
-                        <h4 class="box-title pull-left"></h4>
-
-                        <th:block layout:fragment="search"></th:block>
-                    </div>
-
-                    <th:block layout:fragment="content"></th:block>
-
-                    <th:block layout:fragment="paging"></th:block>
-                </div>
-
-                <th:block layout:fragment="add-content"></th:block>
-            </div>
+<!--헤더-->
+<div id="headerSec">
+    <div class="headerSecInner">
+        <!--로고-->
+        <div class="logo" style="margin-top: 15px;">
+            <a href="http://localhost:8080/post/list.do">
+                <table>
+                    <tr>
+                        <td width="50%" style="text-align:center;padding: initial;">
+                            <img src="/image/main.png" alt="전북대학교" style="text-align: center;width:80%;"></td>
+                        <td> <span style="font-weight:bold;">소프트웨어공학과 학생쉼터</span></td>
+                    </tr>
+                </table>
+            </a>
         </div>
 
-        <footer class="footer">
-            <ul class="list-inline">
-                <li>2016 © NinjaAdmin.</li>
-            </ul>
-        </footer>
     </div>
-</div>
 
-<script th:src="@{/scripts/common.js}"></script>
-<script th:src="@{/scripts/jquery.min.js}"></script>
-<script th:src="@{/scripts/main.js}"></script>
-<script th:src="@{/plugin/bootstrap/js/bootstrap.min.js}"></script>
-<script th:src="@{/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js}"></script>
+    <!--바디-->
+    <div id="bodySec" style="background-color:#dbe1ed;">
+        <div class="subContainer">
+            <div class="row row-inline-block small-spacing">
+                <div class="col-xs-12">
+                    <div class="box-content">
+                        <div class="clearfix">
+                            <h4 class="box-title pull-left"></h4>
 
-<th:block layout:fragment="script"></th:block>
+                            <th:block layout:fragment="search"></th:block>
+                        </div>
+
+                        <th:block layout:fragment="content"></th:block>
+
+                        <th:block layout:fragment="paging"></th:block>
+                    </div>
+
+                    <th:block layout:fragment="add-content"></th:block>
+                </div>
+            </div>
+
+            <!--바디-->
+
+            <!--풋터-->
+            <div id="footerSec">
+                <div class="footerMenuWrap">
+                    <div class="footerSecInner">
+                        <!--바로가기-->
+                        <div class="footer_nav">
+                            <h2>바로가기</h2>
+                            <ul>
+                                <li><a href="/persnInfo/Privacy/view.[::urlPattern::]" target="_blank" title="새창">개인정보처리방침</a></li>
+                                <li><a href="/persnInfo/Email/view.[::urlPattern::]" target="_blank" title="새창">이메일무단수집거부</a></li>
+                                <li><a href="#" target="_blank" title="새창">찾아오시는길</a></li>
+                            </ul>
+                        </div>
+                        <!--바로가기-->
+                        <!--관련사이트-->
+                        <div class="related_link">
+                            <select title="선택" id="related_link">
+                                <option value="">관련사이트</option>
+                            </select>
+                            <input name="" type="button" value="이동" title="이동" />
+                        </div>
+                        <!--관련사이트-->
+                    </div>
+                </div>
+                <div class="footerInfoWrap">
+                    <div class="footerSecInner">
+                        <!--주소-->
+                        <address><span>[54896] </span>전라북도 전주시 덕진구 백제대로 567 <span class="nameM">전북대학교 소프트웨어공학</span>  <span class="tel">전화 :  063-270-4541</span> <span class="fax">팩스 : 063-270-4767</span></address>
+                        <!--주소-->
+                        <!--카피라이트-->
+                        <p class="copyright">Copyright © Jeonbuk National University. All rights reserved.</p>
+                        <!--카피라이트-->
+                    </div>
+                </div>
+            </div>
+            <!--풋터-->
+            <script th:src="@{/scripts/common.js}"></script>
+            <script th:src="@{/scripts/jquery.min.js}"></script>
+            <script th:src="@{/scripts/main.js}"></script>
+            <script th:src="@{/plugin/bootstrap/js/bootstrap.min.js}"></script>
+            <script th:src="@{/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js}"></script>
+
+            <th:block layout:fragment="script"></th:block>
 </body>
 </html>
